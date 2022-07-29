@@ -122,7 +122,8 @@ class TimeNormalizer:
                 dic['timestamp'] = res[0].time.format("YYYY-MM-DD HH:mm:ss")
             else:
                 dic['type'] = 'timespan'
-                dic['timespan'] = [res[0].time.format("YYYY-MM-DD HH:mm:ss"), res[1].time.format("YYYY-MM-DD HH:mm:ss")]
+                dic['_timespan'] = [res[0].time.format("YYYY-MM-DD HH:mm:ss"), res[1].time.format("YYYY-MM-DD HH:mm:ss")]
+                dic['timespan']=[re.time.format("YYYY-MM-DD HH:mm:ss") for re in res]
         return json.dumps(dic)
 
     def __preHandling(self):
